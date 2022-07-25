@@ -11,7 +11,8 @@ function App() {
 
   return (
     <div className='App'>
-      <div id='useFetchHook'>
+      {/* useFetchHook */}
+      <div>
         {error && <p>{error}</p>}
         {isPending && <p>Loading...</p>}
       </div>
