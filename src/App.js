@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import useFetch from './hooks/useFetch';
 import './App.css';
 import Form from './components/Form';
+import Modal from './components/Modal';
 
 function App() {
   const { data, isPending, error } = useFetch('https://reqres.in/api/users');
@@ -18,6 +19,7 @@ function App() {
         {isPending && <p>Loading...</p>}
       </div>
       <Form />
+      <Modal />
     </div>
   );
 }
