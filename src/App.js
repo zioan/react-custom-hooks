@@ -3,6 +3,7 @@ import useFetch from './hooks/useFetch';
 import './App.css';
 import Form from './components/Form';
 import Modal from './components/Modal';
+import LocalStoreComponent from './components/LocalStoreComponent';
 
 function App() {
   const { data, isPending, error } = useFetch('https://reqres.in/api/users');
@@ -20,6 +21,7 @@ function App() {
       </div>
       <Form />
       <Modal />
+      <LocalStoreComponent />
     </div>
   );
 }
