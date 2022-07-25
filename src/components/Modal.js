@@ -1,11 +1,11 @@
 import { useState, useRef } from 'react';
-import useEventListerer from '../hooks/useEventListerer';
+import useEventListener from '../hooks/useEventListener';
 
 function Modal() {
   const [open, setOpen] = useState(false);
   const modalRef = useRef();
 
-  useEventListerer('mousedown', (e) => {
+  useEventListener('mousedown', (e) => {
     if (e.defaultPrevented) return;
     if (modalRef.current && !modalRef.current.contains(e.target)) {
       console.log('clicked outside');

@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 // see modal component
 //usefull for events like closing modal on click outside
 
-function useEventListerer(
+function useEventListener(
   eventType = '',
   listener = () => null,
   target = window,
@@ -26,4 +26,4 @@ function useEventListerer(
   }, [eventType, target, options]);
 }
 
-export default useEventListerer;
+export default useEventListener;
