@@ -4,6 +4,7 @@ import './App.css';
 import Form from './components/Form';
 import Modal from './components/Modal';
 import LocalStoreComponent from './components/LocalStoreComponent';
+import DarkMode from './components/DarkMode';
 
 function App() {
   const { data, isPending, error } = useFetch('https://reqres.in/api/users');
@@ -13,7 +14,7 @@ function App() {
   }, [data]);
 
   return (
-    <div className='App'>
+    <div className='App dark:bg-slate-800 dark:text-white min-h-screen'>
       {/* useFetchHook */}
       <div>
         {error && <p>{error}</p>}
@@ -22,6 +23,7 @@ function App() {
       <Form />
       <Modal />
       <LocalStoreComponent />
+      <DarkMode />
     </div>
   );
 }
