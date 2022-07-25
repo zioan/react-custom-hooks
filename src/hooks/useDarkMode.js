@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import useLocalStorage from './useLocalStorage';
 
+// see DarkMode.js for usecase
+//add a className like "dark:bg-slate-800" with tailwind css to jsx element
+//see tailwind.config.js for configuration
+
 function useDarkMode() {
-  // const preferedDarkMode = false;
-  const [enabled, setEnabled] = useLocalStorage('dark-mode', false);
+  const [enabled, setEnabled] = useLocalStorage('dark-mode', false); //default state will be false
   console.log('enabled: ', enabled);
 
   useEffect(() => {
