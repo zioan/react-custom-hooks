@@ -6,9 +6,12 @@ import Modal from './components/Modal';
 import LocalStoreComponent from './components/LocalStoreComponent';
 import DarkMode from './components/DarkMode';
 import { useDecimalNumber, useDecimalCurency } from './hooks/useDecimalNumber';
+import useNotification from './hooks/useNotification';
 
 function App() {
   const { data, isPending, error } = useFetch('https://reqres.in/api/users');
+
+  const { notificationHandler, displayNotification } = useNotification();
 
   useEffect(() => {
     console.log(data);
@@ -27,6 +30,24 @@ function App() {
       <DarkMode />
       <p>{useDecimalNumber(5)}</p>
       <p>{useDecimalCurency(5)}</p>
+      <div>
+        <button
+          onClick={() =>
+            notificationHandler({ type: 'success', message: 'Success Message' })
+          }
+        >
+          Success
+        </button>
+        <br />
+        <button
+          onClick={() =>
+            notificationHandler({ type: 'warning', message: 'Error Message' })
+          }
+        >
+          Error
+        </button>
+        {displayNotification()}
+      </div>
     </div>
   );
 }
