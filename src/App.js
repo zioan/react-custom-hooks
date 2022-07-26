@@ -5,6 +5,7 @@ import Form from './components/Form';
 import Modal from './components/Modal';
 import LocalStoreComponent from './components/LocalStoreComponent';
 import DarkMode from './components/DarkMode';
+import { useDecimalNumber, useDecimalCurency } from './hooks/useDecimalNumber';
 
 function App() {
   const { data, isPending, error } = useFetch('https://reqres.in/api/users');
@@ -24,6 +25,8 @@ function App() {
       <Modal />
       <LocalStoreComponent />
       <DarkMode />
+      <p>{useDecimalNumber(5)}</p>
+      <p>{useDecimalCurency(5)}</p>
     </div>
   );
 }
