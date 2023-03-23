@@ -1,24 +1,25 @@
-import { useEffect } from 'react';
-import useFetch from './hooks/useFetch';
-import './App.css';
-import Form from './components/Form';
-import Modal from './components/Modal';
-import LocalStoreComponent from './components/LocalStoreComponent';
-import DarkMode from './components/DarkMode';
-import { useDecimalNumber, useDecimalCurency } from './hooks/useDecimalNumber';
-import useNotification from './hooks/useNotification';
+import { useEffect } from 'react'
+import useFetch from './hooks/useFetch'
+import './App.css'
+import Form from './components/Form'
+import Modal from './components/Modal'
+import LocalStoreComponent from './components/LocalStoreComponent'
+import DarkMode from './components/DarkMode'
+import { useDecimalNumber, useDecimalCurency } from './hooks/useDecimalNumber'
+import useNotification from './hooks/useNotification'
+import ComponentWithUseReducer from './tst/ComponentWithUseReducer'
 
 function App() {
-  const { data, isPending, error } = useFetch('https://reqres.in/api/users');
+  const { data, isPending, error } = useFetch('https://reqres.in/api/users')
 
-  const { notificationHandler, displayNotification } = useNotification();
+  const { notificationHandler, displayNotification } = useNotification()
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    console.log(data)
+  }, [data])
 
   return (
-    <div className='App dark:bg-slate-800 dark:text-white min-h-screen'>
+    <div className="min-h-screen App dark:bg-slate-800 dark:text-white">
       {/* useFetchHook */}
       <div>
         {error && <p>{error}</p>}
@@ -47,9 +48,11 @@ function App() {
           Error
         </button>
         {displayNotification()}
+        <hr />
+        <ComponentWithUseReducer />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
